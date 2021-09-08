@@ -4,9 +4,9 @@ import { getVillager } from "../actions";
 
 const Villagers = (props) => {
   const { getVillager } = props;
-  //   useEffect(() => {
-  //     getVillager(0);
-  //   }, []);
+  useEffect(() => {
+    getVillager(1);
+  }, []);
 
   const handleClick = (id) => {
     getVillager(id);

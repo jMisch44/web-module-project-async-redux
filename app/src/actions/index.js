@@ -7,7 +7,6 @@ export const FETCH_FAIL = "FETCH_FAIL";
 export const getVillager = (id) => {
   return (dispatch) => {
     dispatch(fetchStart());
-    console.log(id);
     axios
       .get(`https://acnhapi.com/v1/villagers/${id}`)
       .then((res) => {
