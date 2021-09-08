@@ -4,12 +4,12 @@ export const FETCH_START = "FETCH_START";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAIL = "FETCH_FAIL";
 
-export const getVillager = () => {
+export const getVillager = (id) => {
   return (dispatch) => {
     dispatch(fetchStart());
-
+    console.log(id);
     axios
-      .get(`https://acnhapi.com/v1/villagers/1`)
+      .get(`https://acnhapi.com/v1/villagers/${id}`)
       .then((res) => {
         dispatch(fetchSuccess(res.data));
       })

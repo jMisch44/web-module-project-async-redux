@@ -4,12 +4,12 @@ import { getVillager } from "../actions";
 
 const Villagers = (props) => {
   const { getVillager } = props;
-  useEffect(() => {
-    getVillager();
-  }, []);
+  //   useEffect(() => {
+  //     getVillager(0);
+  //   }, []);
 
-  const handleClick = () => {
-    console.log("clicked");
+  const handleClick = (id) => {
+    getVillager(id);
   };
 
   if (props.error) {
@@ -28,7 +28,13 @@ const Villagers = (props) => {
         A {props.villager.personality}
         {props.villager.species}
       </p>
-      <button onClick={handleClick}>Get Next Villager</button>
+      <button
+        onClick={() => {
+          handleClick(parseInt(props.villager.id) + 1);
+        }}
+      >
+        Get Next Villager
+      </button>
     </div>
   );
 };

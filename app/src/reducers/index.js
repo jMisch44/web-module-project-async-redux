@@ -2,6 +2,7 @@ import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL } from "./../actions";
 
 const initialState = {
   villager: {
+    id: 0,
     image_uri: "",
     name: {},
     personality: "",
